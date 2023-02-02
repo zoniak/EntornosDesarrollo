@@ -1,51 +1,75 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: rgb(179, 105, 105);
-  position: relative;
-  min-height: 800%;
-  margin: 0px;
-  width: 100%;
-  text-align: center;
+.navigation {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  
+  list-style: none;
+  margin: 0; 
+  background: rgb(217, 1, 255);
 }
 
-.wrapper{
-   flex:1;
- }
-
-header {
-  background-image: linear-gradient(rgb(19, 173, 203), rgb(10, 235, 182));
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: auto;
+.navigation a:hover {
+  background: #800282;
 }
 
-h1 {
-  color: rgb(17, 7, 7);
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  background: rgb(219, 7, 191);
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
   text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 40px;
-}
-
-footer {
-  padding:15px;
-  background:rgb(16, 196, 216);
-  color:#fff;
 }
